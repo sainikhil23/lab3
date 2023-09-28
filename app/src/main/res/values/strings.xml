@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Lab2</string>
+
+
+        <string-array name="priority_dropdown_values">
+            <item>High</item>
+            <item>Medium</item>
+            <item>Low</item>
+        </string-array>
+
+
+
+</resources>
