@@ -5,11 +5,13 @@ import android.view.View
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.Spinner
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 
 class MainActivity : AppCompatActivity() {
 
@@ -38,6 +40,17 @@ class MainActivity : AppCompatActivity() {
         resultbtn.setOnClickListener {
             displayResults()
         }
+
+        val toggleButton = findViewById<Button>(R.id.toggleButton)
+        val errorImage = findViewById<ImageView>(R.id.errorImage)
+
+        toggleButton.setOnClickListener {
+            if (errorImage.visibility == View.GONE) {
+                errorImage.visibility = View.VISIBLE
+            } else {
+                errorImage.visibility = View.GONE
+            }
+        }
     }
 
     private fun displayResults() {
@@ -57,5 +70,8 @@ class MainActivity : AppCompatActivity() {
 
         // Display the result in the TextView
         output.text = resultText
+
+
+
     }
 }

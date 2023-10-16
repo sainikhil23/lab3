@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- Toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="?attr/colorPrimary">
+
+        <ImageView
+            android:id="@+id/navigation_icon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="start"
+            android:layout_marginEnd="10dp"
+            android:src="@drawable/baseline_menu_24" />
+
+        <TextView
+            android:id="@+id/username_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="Student Username"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/student_id_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|center_vertical"
+            android:textAllCaps="true"
+            android:layout_marginEnd="20dp"
+            android:layout_below="@id/username_text"
+            android:text="Student ID"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbarSize="4dp"
+        android:layout_below="@id/toolbar"
+        tools:context=".MainActivity">
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="70dp"
+                android:layout_marginRight="40dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Priority"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <Spinner
+                    android:id="@+id/priority"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:background="@drawable/dropdown_style"
+                    android:entries="@array/priority_values"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:text="Enter School Id (include M)"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+                <!-- Text Input -->
+                <EditText
+                    android:id="@+id/mid"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edit_text_border"
+                    android:hint="M123456"
+                    android:inputType="text"
+                    android:padding="5dp" />
+
+                <!-- Radio Buttons -->
+                <RadioGroup
+                    android:id="@+id/opsys"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/macOS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:textStyle="bold"
+                        android:text="MacOS" />
+
+                    <RadioButton
+                        android:id="@+id/windows"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:textStyle="bold"
+                        android:text="Windows" />
+                </RadioGroup>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    android:text="Device Number - 6 Digit"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/devNum"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edit_text_border"
+                    android:hint="123456"
+                    android:inputType="number"
+                    android:maxLength="6"
+                    android:padding="5dp" />
+
+                <!-- Button -->
+                <Button
+                    android:id="@+id/checkbtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="30dp"
+                    android:textSize="20dp"
+                    android:background="@drawable/sharp_button_background"
+                    android:text="Check Inputs" />
+
+                <!-- Text Area (Output) -->
+                <TextView
+                    android:id="@+id/output"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginRight="30dp"
+                    android:inputType="none"
+                    android:lines="4"
+                    android:scrollbars="vertical"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <ToggleButton
+                    android:id="@+id/toggleButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="30dp"
+                    android:text="ATTACH SCREENSHOT" />
+
+                <ImageView
+                    android:id="@+id/errorImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/error"
+                    android:visibility="gone" />
+
+
+                <Button
+                    android:id="@+id/submitbtn"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:textSize="20dp"
+                    android:background="@drawable/sharp_button_background"
+                    android:text="Submit" />
+
+            </LinearLayout>
+        </ScrollView>
+
+    </ScrollView>
+
+</RelativeLayout>

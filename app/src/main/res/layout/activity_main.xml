@@ -1,14 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <!-- Toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="?attr/colorPrimary">
+
+        <ImageView
+            android:id="@+id/navigation_icon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="start"
+            android:layout_marginEnd="10dp"
+            android:src="@drawable/baseline_menu_24" />
+
+        <TextView
+            android:id="@+id/username_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="Murikisl"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/student_id_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|center_vertical"
+            android:textAllCaps="true"
+            android:layout_marginEnd="20dp"
+            android:layout_below="@id/username_text"
+            android:text="M15276130"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+
+    </androidx.appcompat.widget.Toolbar>
+
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:ignore="UselessParent">
+        android:layout_height="match_parent"
+        android:scrollbarSize="4dp"
+        android:layout_below="@id/toolbar"
+        tools:context=".MainActivity">
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -22,7 +68,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Priority"
-
             android:textSize="18sp"
             android:textStyle="bold" />
 
@@ -33,7 +78,7 @@
             android:paddingTop="5dp"
             android:paddingBottom="5dp"
             android:background="@drawable/dropdown_style"
-            android:entries="@array/priority_dropdown_values"
+            android:entries="@array/priority_values"
             />
 
         <TextView
@@ -119,6 +164,23 @@
             android:textSize="20sp"
             android:textStyle="bold" />
 
+        <ToggleButton
+            android:id="@+id/toggleButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:text="ATTACH SCREENSHOT"
+            android:textOn="ATTACH SCREENSHOT"
+            android:textOff="ATTACH SCREENSHOT" />
+
+        <ImageView
+            android:id="@+id/errorImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/error"
+        android:visibility="gone" />
+
 
         <Button
             android:id="@+id/submitbtn"
@@ -131,7 +193,8 @@
             android:text="Submit" />
 
     </LinearLayout>
+        </ScrollView>
 
     </ScrollView>
 
-</ScrollView>
+</RelativeLayout>
